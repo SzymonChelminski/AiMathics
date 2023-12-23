@@ -1,0 +1,51 @@
+.containerAll {
+    height: 90vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 5vh 0 5vh 0;
+    grid-template-rows: 25% 75%;
+}
+
+.containerMain {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 80% 20%;
+}
+
+.blueDistinction {
+    color: #2B60EA;
+}
+
+.brandName {
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+
+.slogan {
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #4B4747;
+}
+
+.image {
+    margin-bottom: 10%;
+}
+
+.button {
+    height: 55px;
+    width: 280px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    background-color: #2B60EA;
+    margin-bottom: 3%;
+}
+
+.bottomText {
+    font-size: 0.75rem;
+    font-weight: 600;
+}

@@ -1,0 +1,43 @@
+.containerAll {
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7vh 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header > h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2B60EA;
+    letter-spacing: -1px;
+}
+
+.header > span {
+    height: 60px;
+    width: 3px;
+    background-color: black;
+    margin: 0 15px;
+    border-radius: 9999px;
+}
+
+.header > h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.button {
+    height: 55px;
+    width: 280px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    background-color: #2B60EA;
+}

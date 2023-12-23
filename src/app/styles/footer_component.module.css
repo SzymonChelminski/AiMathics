@@ -1,0 +1,74 @@
+.containerAll {
+    display: grid;
+    place-items: center;
+    gap: 10%;
+    padding: 5vh;
+}
+
+.section {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4B4747;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blueDistinction {
+    color: #2B60EA;
+}
+
+.section .blueDistinction:nth-child(2) {
+    font-style: italic;
+}
+
+.logoLetters {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.creditsSection {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.creditsEl {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.creditsEl h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.creditsEl span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4B4747;
+}
+
+.contactSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.icon {
+    width: 35px;
+    color: #4B4747;
+}
+
+.rightsMark {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4B4747;
+    padding-bottom: 8%;
+    margin: auto;
+}
+

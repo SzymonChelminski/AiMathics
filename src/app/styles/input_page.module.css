@@ -1,0 +1,131 @@
+.containerAll {
+    min-height: 86vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7vh 0;
+}
+
+.headerContainer {
+    display: grid;
+    place-items: center;
+    padding-bottom: 12%;
+}
+
+.profilePicture {
+    height: 75px;
+    width: 75px;
+    color: #2B60EA;
+    margin-bottom: 2%;
+}
+
+.userName {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 70px;
+}
+
+.slogan {
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #4B4747;
+}
+
+.blueDistinction {
+    color: #2B60EA;
+}
+
+.inputContainer {
+    min-height: 40px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    outline: 3px solid #2B60EA;
+    border-radius: 13px;
+    background-color: #E2EAFF;
+    margin: 0 auto 15%;
+}
+
+.form {
+    display: grid;
+    place-items: center;
+}
+
+.inputField {
+    height: 30px;
+    width: 200px;
+    font-size: 1.25rem;
+    resize: vertical;
+    background-color: #E2EAFF;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    padding-top: 8px;
+    margin: auto;
+}
+
+.inputField::-webkit-scrollbar {
+    display: none;
+}
+
+.inputField::-webkit-resizer {
+    appearance: none;
+}
+
+.chatAnswerBox {
+    width: 280px;
+    display: grid;
+    margin: auto;
+}
+
+.userMessage,
+.aiMessage {
+    max-width: 80%;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 10%;
+    border: 2.5px solid #cfcfcf;
+    border-radius: 13px;
+    padding: 8px;
+}
+
+.userMessage {
+    margin-left: auto;
+    text-align: left;
+}
+
+.aiMessage {
+    margin-right: auto;
+    text-align: left;
+}
+
+.messageName {
+    color: #2B60EA;
+    font-weight: 600;
+}
+
+.button {
+    height: 55px;
+    width: 280px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    background-color: #2B60EA;
+    margin-top: 12%;
+}
+
+.svg {
+    height: 45px;
+    width: 45px;
+    fill: #2B60EA;
+    margin: 5px 6px 0;
+    padding-bottom: 4px;
+}
+
+.cameraPlus {
+    fill: #7a9eff;
+}
+
