@@ -1,5 +1,5 @@
 export default function page() {
   return (
-    <div className="h-[200vh]"></div>
+    <div className="h-[30vh]"></div>
   )
 }
