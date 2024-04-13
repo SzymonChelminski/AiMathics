@@ -14,7 +14,7 @@ export default function Navbar() {
   const { data: session, status } = useSession()
 
   return (
-    <nav className='sticky top-0 flex items-center justify-between w-full px-6 py-4'>
+    <nav className='sticky top-0 flex items-center justify-between w-full px-6 py-4 bg-white'>
       <h1 className="text-[1.75em] font-semibold xl:text-[2em] cursor-pointer">
         <span className="text-[#2B60EA]">Ai</span>Mathics
       </h1>
