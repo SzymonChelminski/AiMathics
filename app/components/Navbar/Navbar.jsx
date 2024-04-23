@@ -24,7 +24,7 @@ export default function Navbar() {
         <span className="w-[32px] h-[5px] rounded-full bg-[#2B60EA] duration-150 group-has-[:checked]:opacity-0"></span>
         <span className="w-[32px] h-[5px] rounded-full bg-black duration-300 relative group-has-[:checked]:-rotate-45  group-has-[:checked]:-translate-y-[10px]"></span>
       </label>
-      <section className="w-[135px] flex flex-col justify-between items-center h-full peer-has-[:checked]:-right-[0px] duration-200 bg-[#E2EAFF] fixed -right-[135px] bottom-0 lg:hidden py-6">
+      <section className="w-[135px] z-2 flex flex-col justify-between items-center h-full peer-has-[:checked]:-right-[0px] duration-200 bg-[#E2EAFF] fixed -right-[135px] bottom-0 lg:hidden py-6">
         <section className="flex flex-col gap-11">
           <div className="flex flex-col items-center gap-3">
             {status==='authenticated' ?

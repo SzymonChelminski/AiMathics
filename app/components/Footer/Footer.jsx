@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col text-[white] justify-between w-full px-6 py-5 md:p-8 md:pb-4 bg-[#1D1E18] gap-6 md:flex-row md:items-center md:gap-2 flex-wrap xl:px-10'>
+    <footer className='flex flex-col text-[white] justify-between w-full px-6 py-5 md:p-8 md:pb-4 bg-[#1D1E18] gap-6 md:flex-row md:items-center md:gap-2 flex-wrap xl:px-10 z-1'>
       <section className="md:max-w-[40%] lg:max-w-[30%] xl:text-[1.2em]">
         <h3 className='text-[1.5em] font-semibold'>
           <span className='text-[#2B60EA]'>Ai</span>Mathics<br />
