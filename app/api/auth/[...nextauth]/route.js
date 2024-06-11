@@ -8,6 +8,7 @@ const authOptions = {
   session: {
     strategy: "jwt",
   },
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GoogleProvider({
       clientId: GOOGLE_CLIENT_ID,
