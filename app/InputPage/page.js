@@ -5,7 +5,13 @@ import Image from "next/image";
 
 //Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleUser,
+  faCircleArrowRight,
+  faCircleInfo,
+  faFlag,
+} from "@fortawesome/free-solid-svg-icons";
+import { faComments } from "@fortawesome/free-regular-svg-icons";
 
 //autoTextArea
 import TextareaAutosize from "react-textarea-autosize";
@@ -17,40 +23,41 @@ import { useChat } from "ai/react";
 import { useSession } from "next-auth/react";
 
 //ImageRecognition
-import { createWorker } from 'tesseract.js';
+import { createWorker } from "tesseract.js";
 
 //State
 import { useState, useEffect } from "react";
 
 export default function InputPage() {
   const { data: session, status } = useSession();
-  const [ imgSrc, setImgSrc ] = useState('')
+  const [imgSrc, setImgSrc] = useState("");
 
-  const { messages, input, setInput, handleInputChange, handleSubmit } = useChat({
-    initialMessages: [
-      {
-        id: Date.now().toString(),
-        role: "system",
-        content:
-          "Behave like an understanding math teacher. Your goal is to make math easy to comprehend by solving and explaining mathematical tasks. To make your explanations clear, make sure to make parahraphs or even gaps beteween major parts of each tasks. It's crucial you understand all languages and answer only mathematical questions.",
-      },
-    ],
-  });
+  const { messages, input, setInput, handleInputChange, handleSubmit } =
+    useChat({
+      initialMessages: [
+        {
+          id: Date.now().toString(),
+          role: "system",
+          content:
+            "Behave like an understanding math teacher. Your goal is to make math easy to comprehend by solving and explaining mathematical tasks. To make your explanations clear, make sure to make parahraphs or even gaps beteween major parts of each tasks. It's crucial you understand all languages and answer only mathematical questions.",
+        },
+      ],
+    });
 
-  useEffect(()=>{
+  useEffect(() => {
     (async () => {
-      if(imgSrc){
-        const worker = await createWorker('pol');
+      if (imgSrc) {
+        const worker = await createWorker("pol");
         const ret = await worker.recognize(imgSrc);
-        setInput(ret.data.text)
+        setInput(ret.data.text);
         await worker.terminate();
       }
     })();
-  },[imgSrc, setInput])
+  }, [imgSrc, setInput]);
 
   return (
-    <section className="flex min-h-[92vh] flex-col items-center justify-between pb-14 pt-8 text-center font-medium">
-      <span>
+    <section className="relative flex min-h-[92vh] flex-col items-center justify-between pb-14 pt-8 text-center font-medium md:min-h-[93vh] lg:min-h-[95vh] xl:pt-10">
+      <section className="items-center block gap-5 px-10 md:mb-12 md:flex xl:w-full">
         {status === "authenticated" ? (
           <>
             <Image
@@ -60,7 +67,24 @@ export default function InputPage() {
               alt="profile picture"
               className="mb-2 rounded-full outline outline-offset-2 outline-[#2B60EA]"
             />
-            <span className="text-[1.25em]">{session.user.name}</span>
+            <span className="flex-col md:flex md:items-start">
+              <h2 className="text-[1.25em] md:font-semibold">
+                {session.user.name}
+              </h2>
+              <h3 className="hidden text-[1.25em] md:block">
+                {session.user.email}
+              </h3>
+            </span>
+            <span className="hidden gap-6 ml-auto xl:flex">
+              <FontAwesomeIcon
+                icon={faCircleInfo}
+                className="h-[40px] text-[#2B60EA] cursor-help"
+              />
+              <FontAwesomeIcon
+                icon={faFlag}
+                className="h-[40px] text-[#2B60EA] cursor-pointer"
+              />
+            </span>
           </>
         ) : (
           <>
@@ -68,19 +92,37 @@ export default function InputPage() {
               icon={faCircleUser}
               className="mb-2 text-[100px] text-[#2B60EA]"
             />
-            <br />
-            <span className="text-[1.25em]">User</span>
+            <span className="flex-col items-start md:flex">
+              <h2 className="text-[1.25em] md:font-semibold">User</h2>
+              <h3 className="hidden text-[1.25em] md:block">
+                user@example.com
+              </h3>
+            </span>
+            <span className="hidden gap-6 ml-auto xl:flex">
+              <FontAwesomeIcon
+                icon={faCircleInfo}
+                className="h-[40px] text-[#2B60EA] cursor-help"
+              />
+              <FontAwesomeIcon
+                icon={faFlag}
+                className="h-[40px] text-[#2B60EA] cursor-pointer"
+              />
+            </span>
           </>
         )}
-      </span>
-      <form onSubmit={handleSubmit} id="inputForm">
-        <h2 className="mb-12 pt-10 text-[1.5em] text-[#4B4747]">
+      </section>
+      <FontAwesomeIcon
+        icon={faComments}
+        className="absolute left-[50%] top-[50%] -z-10 hidden h-[clamp(30vh,40vh,50vh)] -translate-x-[50%] -translate-y-[50%] text-[#e8e8e8] md:block"
+      />
+      <form onSubmit={handleSubmit} id="inputForm" className="md:order-2">
+        <h2 className="mb-12 pt-10 text-[1.5em] text-[#4B4747] md:hidden">
           Provide question, <br /> obtain the
           <span className="text-[#2B60EA]"> answer</span>.
         </h2>
-        <span className="mb-14 flex min-h-[50px] w-[250px] overflow-hidden rounded-lg bg-[#E2EAFF] p-2 outline outline-offset-4 outline-[#2B60EA]">
+        <span className="mb-14 flex min-h-[50px] w-[250px] overflow-hidden rounded-lg bg-[#E2EAFF] p-2 outline outline-offset-4 outline-[#2B60EA] md:mb-0 md:mt-14 md:w-[500px] md:bg-transparent">
           <TextareaAutosize
-            className="my-auto bg-transparent pl-1 outline-none [&::-webkit-resizer]:hidden"
+            className="my-auto bg-transparent pl-1 outline-none md:w-full md:pr-4 [&::-webkit-resizer]:hidden"
             value={input}
             onChange={handleInputChange}
           />
@@ -102,16 +144,27 @@ export default function InputPage() {
                 fill="#9EB8FF"
               />
             </svg>
-            <input type="file" onChange={(e)=>setImgSrc(e.currentTarget.files[0])} className="hidden"/>
+            <input
+              type="file"
+              onChange={(e) => setImgSrc(e.currentTarget.files[0])}
+              className="hidden"
+            />
+          </label>
+          <label className="hidden md:flex">
+            <FontAwesomeIcon
+              icon={faCircleArrowRight}
+              className="ml-3 mt-1 h-[28px] text-[#2B60EA]"
+            />
+            <button className="hidden"></button>
           </label>
         </span>
       </form>
-      <section className="flex flex-col gap-10 px-16">
+      <section className="flex flex-col gap-10 px-16 md:order-1">
         {messages.map((m) =>
           m.role === "user" ? (
             <section
               key={m.id}
-              className="ml-auto max-w-[80%] rounded-xl p-3 text-left outline outline-[#cfcfcf]"
+              className="ml-auto max-w-[80%] rounded-xl bg-white p-3 text-left outline outline-[#cfcfcf] xl:max-w-[70%]"
             >
               <span className="font-semibold text-[#2B60EA]">You</span>:{" "}
               {m.content}
@@ -119,7 +172,7 @@ export default function InputPage() {
           ) : m.role === "assistant" ? (
             <section
               key={m.id}
-              className="max-w-[80%] rounded-xl p-3 text-left outline outline-[#cfcfcf]"
+              className="max-w-[80%] rounded-xl bg-white p-3 text-left outline outline-[#cfcfcf] xl:max-w-[70%]"
             >
               <span className="font-semibold text-[#2B60EA]">AiTeacher</span>:{" "}
               {m.content}
@@ -130,7 +183,7 @@ export default function InputPage() {
         )}
       </section>
       <button
-        className="mt-14 h-[60px] w-[275px] rounded-full bg-[#2B60EA] text-[1.25em] text-white"
+        className="mt-14 h-[60px] w-[275px] rounded-full bg-[#2B60EA] text-[1.25em] text-white md:hidden"
         form="inputForm"
       >
         Solve

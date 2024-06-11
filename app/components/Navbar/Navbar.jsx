@@ -10,13 +10,18 @@ import Image from "next/image";
 //Authentication
 import { useSession, signIn, signOut } from "next-auth/react";
 
+//Links
+import Link from "next/link";
+
 export default function Navbar() {
   const { data: session, status } = useSession();
 
   return (
-    <nav className="sticky top-0 z-[999] flex w-full items-center justify-between bg-white px-6 py-4">
+    <nav className="sticky top-0 z-[999] flex w-full items-center justify-between rounded-b-lg bg-white px-6  py-4 shadow">
       <h1 className="cursor-pointer text-[1.75em] font-semibold xl:text-[2em]">
-        <span className="text-[#2B60EA]">Ai</span>Mathics
+        <Link href={"/"}>
+          <span className="text-[#2B60EA]">Ai</span>Mathics
+        </Link>
       </h1>
       <label className="group peer flex flex-col gap-[5px] duration-150 has-[:checked]:mr-[125px] lg:hidden">
         <input type="checkbox" name="bar" className="hidden" />

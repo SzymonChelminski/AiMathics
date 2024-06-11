@@ -21,8 +21,8 @@ export default function Footer() {
       <hr className="border-[#2B60EA] md:h-[125px] md:w-[3px] md:bg-[#2B60EA] lg:hidden" />
       <section className="grid min-w-[55%] lg:min-w-[35%] xl:text-[1.2em]">
         <table>
-          <tbody className="text-center">
-            <tr className="text-[1.25em] md:text-[1.25em] md:text-[#2B60EA]">
+          <tbody className="text-center ">
+            <tr className="text-[1.25em] md:text-[1.25em] md:text-[#2B60EA] cursor-pointer">
               <th>Credits</th>
               <th>Terms</th>
               <th>Pricing</th>
@@ -42,7 +42,7 @@ export default function Footer() {
       </section>
       <hr className="hidden border-[#2B60EA] md:h-[150px] md:w-[3px] md:bg-[#2B60EA] lg:flex" />
       <section className="hidden w-[65%] py-5 md:flex lg:max-w-[265px] xl:max-w-[310px] xl:text-[1.2em]">
-        <span className="m-auto flex items-center gap-6 lg:flex-col">
+        <span className="flex items-center gap-6 m-auto lg:flex-col">
           <h4>
             Sign in to the newsletter to stay informed about latest offers.
           </h4>
@@ -52,7 +52,7 @@ export default function Footer() {
               placeholder="example@gmail.com"
               className="bg-transparent"
             />
-            <input type="submit" value="Sign in" />
+            <input type="submit" value="Sign in" className="cursor-pointer" />
           </form>
         </span>
       </section>

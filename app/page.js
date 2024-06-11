@@ -1,8 +1,12 @@
+//Images
 import Image from "next/image";
+
+//Links
+import Link from "next/link";
 
 export default function page() {
   return (
-    <section className="mb-[10vh] flex h-[85vh] flex-col items-center justify-between text-center sm:mb-0 sm:min-h-[95vh] sm:justify-between">
+    <section className="mb-[10vh] flex min-h-[85vh] flex-col items-center justify-between bg-white text-center sm:mb-0 sm:min-h-[95vh] sm:justify-between">
       <h1 className="pt-[5vh] text-[1.75em] font-medium text-[#383636] sm:hidden">
         We spread knowledge <br />
         through <span className="text-[#2B60EA]">solutions</span>.
@@ -16,14 +20,14 @@ export default function page() {
           Let your personal <i>ai-teacher</i> make notes, solve <br /> and
           explain each task at any moment.
         </h4>
-        <section className="mt-5 flex gap-12">
-          <button className="rounded-full border-[3px] border-[#2B60EA] bg-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold text-white">
-            Get Started
-          </button>
-          <button className="rounded-full border-[3px] border-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold">
-            Learn More
-          </button>
-        </section>
+          <Link href={'/InputPage'} className="flex gap-12 mt-5">
+            <button className="rounded-full border-[3px] border-[#2B60EA] bg-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold text-white">
+              Get Started
+            </button>
+            <button className="rounded-full border-[3px] border-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold">
+              Learn More
+            </button>
+          </Link>
       </section>
       <Image
         src="/homePage.jpg"
@@ -41,12 +45,12 @@ export default function page() {
       </h6>
       <Image
         src="/chat.png"
-        width={350}
-        height={350}
+        width={9999999}
+        height={9999999}
         alt="chat picture"
         priority={true}
         quality={100}
-        className="relative -z-[9999] hidden w-[85vw] rounded-t-2xl drop-shadow-2xl sm:block lg:w-[75vw] lg:rounded-t-3xl 2xl:w-[1200px]"
+        className="relative -z-[0] hidden w-[85vw] rounded-t-2xl drop-shadow-2xl sm:block lg:w-[75vw] lg:rounded-t-3xl 2xl:w-[1200px]"
       />
       <span className="sm:hidden">
         <button className="mb-3 h-[60px] w-[280px] rounded-full bg-[#2B60EA] font-semibold text-white">
