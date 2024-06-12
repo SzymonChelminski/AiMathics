@@ -57,7 +57,7 @@ export default function InputPage() {
 
   return (
     <section className="relative flex min-h-[92vh] flex-col items-center justify-between pb-14 pt-8 text-center font-medium md:min-h-[93vh] lg:min-h-[95vh] xl:pt-10">
-      <section className="items-center block gap-5 px-10 md:mb-12 md:flex xl:w-full">
+      <section className="block items-center gap-5 px-10 md:mb-12 md:flex xl:w-full">
         {status === "authenticated" ? (
           <>
             <Image
@@ -75,14 +75,14 @@ export default function InputPage() {
                 {session.user.email}
               </h3>
             </span>
-            <span className="hidden gap-6 ml-auto xl:flex">
+            <span className="ml-auto hidden gap-6 xl:flex">
               <FontAwesomeIcon
                 icon={faCircleInfo}
-                className="h-[40px] text-[#2B60EA] cursor-help"
+                className="h-[40px] cursor-help text-[#2B60EA]"
               />
               <FontAwesomeIcon
                 icon={faFlag}
-                className="h-[40px] text-[#2B60EA] cursor-pointer"
+                className="h-[40px] cursor-pointer text-[#2B60EA]"
               />
             </span>
           </>
@@ -98,14 +98,14 @@ export default function InputPage() {
                 user@example.com
               </h3>
             </span>
-            <span className="hidden gap-6 ml-auto xl:flex">
+            <span className="ml-auto hidden gap-6 xl:flex">
               <FontAwesomeIcon
                 icon={faCircleInfo}
-                className="h-[40px] text-[#2B60EA] cursor-help"
+                className="h-[40px] cursor-help text-[#2B60EA]"
               />
               <FontAwesomeIcon
                 icon={faFlag}
-                className="h-[40px] text-[#2B60EA] cursor-pointer"
+                className="h-[40px] cursor-pointer text-[#2B60EA]"
               />
             </span>
           </>
@@ -126,7 +126,7 @@ export default function InputPage() {
             value={input}
             onChange={handleInputChange}
           />
-          <label className="mt-1 ml-auto mr-1">
+          <label className="ml-auto mr-1 mt-1">
             <svg
               className="scale-125"
               width="28"

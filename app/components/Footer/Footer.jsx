@@ -7,6 +7,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+//Links
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="z-1 flex w-full flex-col flex-wrap justify-between gap-6 bg-[#1D1E18] px-6 py-5 text-[white] md:flex-row md:items-center md:gap-2 md:p-8 md:pb-4 xl:px-10 2xl:rounded-t-2xl">
@@ -21,9 +24,11 @@ export default function Footer() {
       <hr className="border-[#2B60EA] md:h-[125px] md:w-[3px] md:bg-[#2B60EA] lg:hidden" />
       <section className="grid min-w-[55%] lg:min-w-[35%] xl:text-[1.2em]">
         <table>
-          <tbody className="text-center ">
-            <tr className="text-[1.25em] md:text-[1.25em] md:text-[#2B60EA] cursor-pointer">
-              <th>Credits</th>
+          <tbody className="text-center">
+            <tr className="cursor-pointer text-[1.25em] md:text-[1.25em] md:text-[#2B60EA]">
+              <th>
+                <Link href={"/Credits"}>Credits</Link>
+              </th>
               <th>Terms</th>
               <th>Pricing</th>
             </tr>
@@ -42,7 +47,7 @@ export default function Footer() {
       </section>
       <hr className="hidden border-[#2B60EA] md:h-[150px] md:w-[3px] md:bg-[#2B60EA] lg:flex" />
       <section className="hidden w-[65%] py-5 md:flex lg:max-w-[265px] xl:max-w-[310px] xl:text-[1.2em]">
-        <span className="flex items-center gap-6 m-auto lg:flex-col">
+        <span className="m-auto flex items-center gap-6 lg:flex-col">
           <h4>
             Sign in to the newsletter to stay informed about latest offers.
           </h4>

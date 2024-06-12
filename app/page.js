@@ -20,14 +20,14 @@ export default function page() {
           Let your personal <i>ai-teacher</i> make notes, solve <br /> and
           explain each task at any moment.
         </h4>
-          <Link href={'/InputPage'} className="flex gap-12 mt-5">
-            <button className="rounded-full border-[3px] border-[#2B60EA] bg-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold text-white">
-              Get Started
-            </button>
-            <button className="rounded-full border-[3px] border-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold">
-              Learn More
-            </button>
-          </Link>
+        <Link href={"/InputPage"} className="mt-5 flex gap-12">
+          <button className="rounded-full border-[3px] border-[#2B60EA] bg-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold text-white">
+            Get Started
+          </button>
+          <button className="rounded-full border-[3px] border-[#2B60EA] px-10 py-2 text-[1.25em] font-semibold">
+            Learn More
+          </button>
+        </Link>
       </section>
       <Image
         src="/homePage.jpg"
@@ -52,13 +52,13 @@ export default function page() {
         quality={100}
         className="relative -z-[0] hidden w-[85vw] rounded-t-2xl drop-shadow-2xl sm:block lg:w-[75vw] lg:rounded-t-3xl 2xl:w-[1200px]"
       />
-      <Link href={'/InputPage'} className="sm:hidden">
+      <Link href={"/InputPage"} className="sm:hidden">
         <button className="mb-3 h-[60px] w-[280px] rounded-full bg-[#2B60EA] font-semibold text-white">
-            Get Started
-          </button>
-          <p className="text-[0.85em] font-semibold sm:hidden">
-            Do you have an account? <span className="text-[#2B60EA]">Signup</span>
-          </p>
+          Get Started
+        </button>
+        <p className="text-[0.85em] font-semibold sm:hidden">
+          Do you have an account? <span className="text-[#2B60EA]">Signup</span>
+        </p>
       </Link>
     </section>
   );
