@@ -52,14 +52,14 @@ export default function page() {
         quality={100}
         className="relative -z-[0] hidden w-[85vw] rounded-t-2xl drop-shadow-2xl sm:block lg:w-[75vw] lg:rounded-t-3xl 2xl:w-[1200px]"
       />
-      <span className="sm:hidden">
+      <Link href={'/InputPage'} className="sm:hidden">
         <button className="mb-3 h-[60px] w-[280px] rounded-full bg-[#2B60EA] font-semibold text-white">
-          Get Started
-        </button>
-        <p className="text-[0.85em] font-semibold sm:hidden">
-          Do you have an account? <span className="text-[#2B60EA]">Signup</span>
-        </p>
-      </span>
+            Get Started
+          </button>
+          <p className="text-[0.85em] font-semibold sm:hidden">
+            Do you have an account? <span className="text-[#2B60EA]">Signup</span>
+          </p>
+      </Link>
     </section>
   );
 }
